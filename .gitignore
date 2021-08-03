@@ -1,3 +1,4 @@
 volumes/
-odoo/lsv_project/
+/odoo/lsv_project/
 */.env
+
