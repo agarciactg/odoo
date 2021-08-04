@@ -26,6 +26,3 @@ class Bail(models.Model):
     endorsement_ids = fields.One2many('lsv_project.endorsement',
                                      'bail_id',
                                      string='Endorsements')
-    
-    
-    

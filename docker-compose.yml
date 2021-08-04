@@ -38,7 +38,7 @@ services:
       - odoo_data:/var/lib/odoo
       - odoo_core:/usr/lib/python3/dist-packages/odoo
     ports:
-      - 8075:8070
+      - 8069:8069
     depends_on:
       - db
     tty: true

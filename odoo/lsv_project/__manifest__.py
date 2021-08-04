@@ -1,6 +1,6 @@
 {
 	'name': "MyFirtModule",
-	'version': "10-devl10.0",
+	'version': "2.0-devl4",
 	'summary': "This is my firt module, make in odoo, I'm happy (Y)",
 	'depends': ['project', 'contacts'],
 	'data': {},
