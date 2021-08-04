@@ -21,7 +21,7 @@ class Bail(models.Model):
                                  string='Insurer',
                                  required=True)
     project_id = fields.Many2one('project.project',
-                                 string='project',
+                                 string='Project',
                                   required=True)
     endorsement_ids = fields.One2many('lsv_project.endorsement',
                                      'bail_id',

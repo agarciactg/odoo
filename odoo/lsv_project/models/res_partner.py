@@ -9,7 +9,6 @@ class Partner(models.Model):
     """
     Partner model
     """
-    #_name = "lsv_project.res_partner"
     _inherit = "res.partner"
 
     identify_number = fields.Char(string='Identify Number',

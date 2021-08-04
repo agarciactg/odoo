@@ -9,3 +9,9 @@ from . import res_config_settings
 from . import resident_role
 from . import res_partner
 from . import qr_code
+from . import subproject
+from . import planning
+from . import task_history
+from . import task_history_image
+from . import project
+from . import task

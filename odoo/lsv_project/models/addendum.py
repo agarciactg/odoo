@@ -9,7 +9,7 @@ class Addendum(models.Model):
     """
     Addendum class
     """
-    _name = "lsv_project.addendum"
+    _name = 'lsv_project.addendum'
 
     number = fields.Char(string='Number',
                          required=True)
