@@ -18,3 +18,6 @@ class Task(models.Model):
                                   required=False)
     task_history_ids = fields.One2many('lsv_project.task_history',
                                        'task_id')
+    #planning_ids = fields.One2many('lsv_project.planning',
+    #                                'task_ids')
+                        

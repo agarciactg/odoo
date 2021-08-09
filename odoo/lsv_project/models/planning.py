@@ -19,7 +19,7 @@ class Planning(models.Model):
                            required=True)
     end_on = fields.Date(string='Date',
                          required=True)
-    responsible_id =fields.Many2one('res.partnet',
+    responsible_id =fields.Many2one('res.partner',
                                     string='Reponsible',
                                     required=True)
     project_id = fields.Many2one('project.project',

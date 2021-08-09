@@ -11,6 +11,8 @@ class Addendum(models.Model):
     """
     _name = 'lsv_project.addendum'
 
+    __rec_name = "name"
+
     number = fields.Char(string='Number',
                          required=True)
     comments = fields.Text(string='comments',

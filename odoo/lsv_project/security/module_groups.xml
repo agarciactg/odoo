@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+
+        <!--Categority-->
+        <record id="lsv_project.module_category" model="ir.module.category">
+            <field name="name">LSV Project</field>
+            <field name="description">This is my firt group in odoo, the group is abount at the segurity of the user...</field>
+            <!--sequence = tamaño de fila en la vista.-->
+            <field name="sequence">4</field>
+        </record>
+
+        <!--Group of manager \ res.groups -->
+        <record id="lsv_project.manager_group" model="res.groups">
+            <field name="name">LSV Project Manager</field>
+            <field name="category_id" ref="lsv_project.module_category"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <!--Group of user-->
+        <record id="lsv_project.user_group" model="res.groups">
+            <field name="name">LSV Project User</field>
+            <field name="category_id" ref="lsv_project.module_category"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+    </data>
+</odoo>

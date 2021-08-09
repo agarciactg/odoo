@@ -1,0 +1,9 @@
+id, name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+lsv_project_manager_group_addendum,lsv_project_manager_group_addendum,model_lsv_project_addendum,lsv_project_manager_group,1,1,1,1
+--------------------------------------------------------------------------
+
+
+
+lsv_project_user_group_addendum, lsv_project_user_group_addendum, model_lsv_project_addendum, lsv_project_user_group,1,0,0,0
+
+lsv_project_manager_gruop_addendum_description, lsv_project_manager_group_addendum_description, model_lsv_project_addendum_description, lsv_project_user_group,1,0,0,0
