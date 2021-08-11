@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!--vista de formulario-->
+    <record id="lsv_project.addendum_description_form" model="ir.ui.view">
+        <field name="name">lsv.project.addendum.description.form</field>
+        <field name="model">lsv_project.addendum_description</field>
+        <field name="arch" type="xml">
+            <form string="Addendum Description_">
+                <sheet>
+                    <group>
+                        <field name="name" string="Name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <!--Vista de arbol-->
+    <record id="lsv_project.addendum_description_tree" model="ir.ui.view">
+        <field name="name">lsv.project.addendum.description.tree</field>
+        <field name="model">lsv_project.addendum_description</field>
+        <field name="arch" type="xml">
+            <tree default_order="name desc">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!--Viista de busqueda-->
+    <record id="lsv_project.addendum_description_search" model="ir.ui.view">
+        <field name="name">lsv.project.addendum.description.search</field>
+        <field name="model">lsv_project.addendum_description</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <!--Accionador-->
+    <record id="lsv_project.addendum_description_window" model="ir.actions.act_window">
+        <field name="name">Addendum Description One</field>
+        <field name="view_mode">tree,form,search</field>
+        <field name="res_model">lsv_project.addendum_description</field>
+    </record>
+
+    <!--Asociacion de Addendum description con el menu independiente-->
+    <menuitem
+        id="lsv_project.addendum_description_menuitem"
+        name="Addendum Descriptions"
+        parent="lsv_project.settings_menuitem"
+        sequence="0"
+        groups="lsv_project.manager_group"
+        action="lsv_project.addendum_description_window"
+        />
+</odoo>

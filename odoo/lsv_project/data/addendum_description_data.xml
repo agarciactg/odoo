@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
+        <!--hello-->
         <record model="lsv_project.addendum_description" id="lsv_project_addendum_description_1">
             <field name="name">Addendum description 1</field>
         </record>

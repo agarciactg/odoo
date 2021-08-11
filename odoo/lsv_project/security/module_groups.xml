@@ -19,6 +19,7 @@
         </record>
 
         <!--Group of user-->
+        <!--hello-->
         <record id="lsv_project.user_group" model="res.groups">
             <field name="name">LSV Project User</field>
             <field name="category_id" ref="lsv_project.module_category"/>
