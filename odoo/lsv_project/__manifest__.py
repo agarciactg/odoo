@@ -15,6 +15,7 @@
 		'view/res_config_settings_view.xml',
 		'view/res_partner_view.xml',
 		'view/project_project_view.xml',
+		'view/addendum_view.xml',
 	},
 	'installable': True,
 	'auto_install': False,

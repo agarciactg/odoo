@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <xpath expr="//page[@name='settings']" position="after">
                 <!--page = para agregar una pestaña-->
-                <page name="addendums" string="Addendums">
+                <page name="addendums" string="Addendums" groups="lsv_project.manager_group, lsv_project.user_group">
                     <!-- el name dentro del field, hace referencia a las variables del modulo (project)-->
                     <field name="addendum_ids" string="Addendums">
                         <tree name="addendums" string="Addendums Tree">

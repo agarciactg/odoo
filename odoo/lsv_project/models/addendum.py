@@ -2,8 +2,10 @@
 """
 All models from the Addendum module
 """
-
-from odoo import models, fields
+import logging
+from odoo import models, fields, api
+from odoo.exceptions import UserError, ValidationError
+_logger = logging.getLogger(__name__)
 
 class Addendum(models.Model):
     """
@@ -29,4 +31,11 @@ class Addendum(models.Model):
     addendum_description_id = fields.Many2one('lsv_project.addendum_description',
                                             string='Description',
                                             required=True)
-    
+
+    @api.model
+    def create(self, vals):
+        """
+        Override the default create Addemdum method
+        """
+        _logger.error(vals)
+        return super(Addendum, self).create(vals)
