@@ -11,6 +11,8 @@ class TaskHistoryImage(models.Model):
     """
     _name = "lsv_project.task_history_image"
 
+    _rec_name = 'image'
+
     image = fields.Binary(string='Image')
     task_history_id = fields.Many2one('lsv_project.task_history',
                                       required=True)

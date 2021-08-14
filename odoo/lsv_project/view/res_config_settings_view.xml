@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--El ID de la vista debe tener una informacion asociada a la vista que estamos creando-->
+    <record id="lsv_project.res_config_settings_view_form_inherit_base_setup" model="ir.ui.view">
+        <field name="name">lsv.project.res.config.settings.view.form.inherit.base.setup</field>
+        <!--El modelo lo puedes encontrar en la vista del modelo-->
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <!--Position es para indica rla posicion donde se mostrara la data-->
+            <!--
+                replace = quita toda la data dejando solo la agregada 
+                inside = agrega en la data actual
+                after = ubicar de ultimo el elemento agregado
+                before = agrega antes de la data
+            -->
+            <xpath expr="//div[@name='integration']" position="inside">
+
+                <div class="col-12 col-lg-6 o_setting_box">
+                    <div class="o_setting_left_pane"></div>
+                    <div class="o_setting_right_pane">
+                        <label for="google_maps_api_key" string="Google Maps Api Key"/>
+                        <div class="text-muted">
+                            Google Maps API KEY
+                        </div>
+                        <field name="google_maps_api_key"/>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

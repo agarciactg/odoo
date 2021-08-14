@@ -13,6 +13,8 @@ class QrCode(models.Model):
     """
     _name = "lsv_project.qr_code"
 
+    _rec_name = 'code'
+
     def _compute_qr_token(self):
         return random.randrange(1000000, 9999999, 2)
 

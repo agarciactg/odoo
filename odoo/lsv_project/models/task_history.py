@@ -9,6 +9,7 @@ class TaskHistory(models.Model):
     TaskHistory class
     """
     _name = "lsv_project.task_history"
+    
     _rec_name = "date"
 
     date = fields.Date(string='Date',

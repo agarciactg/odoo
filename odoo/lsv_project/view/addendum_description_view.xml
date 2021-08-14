@@ -54,4 +54,5 @@
         groups="lsv_project.manager_group"
         action="lsv_project.addendum_description_window"
         />
+        
 </odoo>

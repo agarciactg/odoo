@@ -10,6 +10,8 @@ class Planning(models.Model):
     """
     _name = "lsv_project.planning"
 
+    _rec_name = 'state'
+
     state = fields.Selection([
         ('pending', 'Pending'),
         ('active', 'Active'),
