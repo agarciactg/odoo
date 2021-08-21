@@ -23,7 +23,8 @@ class Planning(models.Model):
                          required=True)
     responsible_id =fields.Many2one('res.partner',
                                     string='Reponsible',
-                                    required=True)
+                                    required=True,
+                                    domain=[('is_resident', '=', 'True')])
     project_id = fields.Many2one('project.project',
                                  string='Project',
                                  required=True)

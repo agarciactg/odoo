@@ -24,7 +24,7 @@ class Addendum(models.Model):
                            required=True)
     end_at = fields.Date(string='End At',
                          required=True)
-    addendum_date = fields.Date(string='Addebdum Date',
+    addendum_date = fields.Date(string='Addendum Date',
                                 required=False)
     project_id = fields.Many2one('project.project',
                               string='Project',
@@ -58,14 +58,46 @@ class Addendum(models.Model):
         """
         Capture the addendum date and validate that this value must bet between (start at) and (end at) values
         """
-        _logger.error('addendum_date: {0}'.format(self.addendum_date))
-        if self.addendum_date and self.start_at and self.end_at and self.addendum_date < self.start_at and self.addendum_date > self.end_at:
-            raise ValidationError("The (addendum date) field must be between (start at) and (end at) fields")
+        if self.addendum_date and self.start_at and self.end_at and self.addendum_date < self.start_at or self.addendum_date > self.end_at:
+                raise ValidationError("The (addendum date) field must be between (start at) and (end at) fields")
 
     @api.model
     def create(self, vals):
         """
-        Override the default create Addemdum method
+        Override the default create Addendum method
         """
-        _logger.error(vals)
+        project_id = vals.get('project_id', False)
+        number = vals.get('number', False)
+        if project_id and number:
+            self._validate_if_number_exists(number=number, project_id=project_id)
         return super(Addendum, self).create(vals)
+
+    def _validate_if_number_exists(self, number, project_id, id=None):
+        """
+        Validate if the number is repeated by the project selected
+        """
+
+        # The domain is the search criterio to filter data
+
+        # el dominio son los criterios que usamos para filtrar informacion
+        params = [
+            ('project_id', '=', project_id),
+            ('number', 'ilike', number)
+        ]
+
+        if id is not None:
+            params.append(('id', '!=', id))
+
+        counter = self.env['lsv_project.addendum'].search_count(params)
+        
+        if counter > 0:
+            raise ValidationError("The number already exists!.")
+
+    def write(self, vals):
+        """
+        Override the default write addendum method
+        """
+        number = vals.get('number', False)
+        if number:
+            self._validate_if_number_exists(number=number, project_id=self.project_id.id)
+        return super(Addendum, self).write(vals)

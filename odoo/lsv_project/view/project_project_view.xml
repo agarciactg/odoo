@@ -23,4 +23,42 @@
             </xpath>
         </field>
     </record>
+
+    <record id="lsv_project.project_edit_project_resident_id_field" model="ir.ui.view">
+        <field name="name">lsv.project.project.edit.project.resident.id.field</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/notebook/page/group/group/field[@name='user_id']" position="after">
+                <field name="resident_id" string="Resident"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="lsv_project.project_edit_project_bail_page" model="ir.ui.view">
+        <field name="name">lsv.project.project.edit.project.bail.page</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="lsv_project.project_edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="/form/sheet/notebook/page[@name='addendums']" position="after">
+                <page name="bails" string="Bails" groups="lsv_project.manager_group,lsv_project.user_group">
+                    <field name="bail_ids" string="Bails">
+                        <tree name="bails" string="Bails">
+                            <field name="number"/>
+                        </tree>
+                    </field>
+                </page>
+                <page name="planning" string="Planning" groups="lsv_project.manager_group,lsv_project.user_group">
+                    <field name="planning_ids" string="Planning">
+                        <tree name="planning" string="Planning">
+                            <field name="state"/>
+                            <field name="start_on"/>
+                            <field name="end_on"/>
+                            <field name="responsible_id"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
 </odoo>

@@ -21,7 +21,8 @@ class Bail(models.Model):
                             required=True)
     insurer_id = fields.Many2one('res.partner',
                                  string='Insurer',
-                                 required=True)
+                                 required=True,
+                                 domain=[('is_resident', '=', 'True')])
     project_id = fields.Many2one('project.project',
                                  string='Project',
                                   required=True)
